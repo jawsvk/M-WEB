@@ -16,10 +16,11 @@
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
         </p>
         <asp:Label ID="Label1" runat="server"></asp:Label>
-    </form>
     <p>
         <input id="Text1" type="text" /></p>
     <p>
         <input id="Button2" " type="button" value="button" /></p>
-</body>
+        <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+    </form>
+    </body>
 </html>
