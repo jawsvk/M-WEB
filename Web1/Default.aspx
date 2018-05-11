@@ -20,7 +20,6 @@
         <input id="Text1" type="text" /></p>
     <p>
         <input id="Button2" " type="button" value="button" /></p>
-        <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
     </form>
     </body>
 </html>
