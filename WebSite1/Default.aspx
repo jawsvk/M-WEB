@@ -42,17 +42,76 @@
         <br />
         <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" style="margin-bottom: 0px" Text="All Orders" />
         <br />
-        <asp:GridView ID="GridView1" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
-            <FooterStyle BackColor="#CCCCCC" />
-            <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
-            <RowStyle BackColor="White" />
-            <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
-            <SortedAscendingCellStyle BackColor="#F1F1F1" />
-            <SortedAscendingHeaderStyle BackColor="#808080" />
-            <SortedDescendingCellStyle BackColor="#CAC9C9" />
-            <SortedDescendingHeaderStyle BackColor="#383838" />
+        <br />
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"
+            OnRowEditing ="OnRowEditing"
+            OnRowUpdating ="OnRowUpdating"
+            OnRowCancelingEdit ="OnRowCancelingEdit"
+            OnRowDeleting ="OnRowDeleting"
+            DataKeyNames="OrderID" 
+            >
+             
+         <Columns>
+                    <asp:TemplateField HeaderText="OrderID">
+         <ItemTemplate>
+                 <asp:Label ID="OrderID" runat="server" Text='<%# Bind("OrderID") %>' />                              
+         </ItemTemplate>
+                     </asp:TemplateField>  
+                    <asp:TemplateField HeaderText="CustomerName">
+         <ItemTemplate>
+                 <asp:Label ID="CustomerName" runat="server" Text='<%# Bind("CustomerName") %>' />                              
+         </ItemTemplate>
+          <EditItemTemplate>
+                  <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("CustomerName") %>'></asp:TextBox>
+          </EditItemTemplate>
+          </asp:TemplateField>  
+                    <asp:TemplateField HeaderText="Dish">
+         <ItemTemplate>
+                 <asp:Label ID="Dish" runat="server" Text='<%# Bind("Dish") %>' />                              
+         </ItemTemplate>
+         <EditItemTemplate>
+                        <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Dish") %>'></asp:TextBox>
+          </EditItemTemplate>
+                     </asp:TemplateField>  
+         <asp:TemplateField HeaderText="Size">
+         <ItemTemplate>
+                 <asp:Label ID="Size" runat="server" Text='<%# Bind("Size") %>' />                              
+         </ItemTemplate>
+             <EditItemTemplate>
+             <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("Size") %>'></asp:TextBox>
+             </EditItemTemplate>
+                     </asp:TemplateField>  
+             <asp:TemplateField HeaderText="Chilli">
+         <ItemTemplate>
+                 <asp:Checkbox ID="Chilli" runat="server"  checked='<%# Bind("Chilli") %>' Enabled ="false" />                              
+         </ItemTemplate>
+          <EditItemTemplate>
+                 <asp:Checkbox ID="Checkbox1" runat="server" checked='<%# Bind("Chilli") %>'></asp:Checkbox>
+          </EditItemTemplate>
+                     </asp:TemplateField>  
+            <asp:TemplateField HeaderText="Salt">
+         <ItemTemplate>
+                 <asp:Checkbox ID="Salt" runat="server"  checked='<%# Bind("Salt") %>' Enabled ="false" />                              
+         </ItemTemplate>
+          <EditItemTemplate>
+                 <asp:Checkbox ID="Checkbox2" runat="server" checked='<%# Bind("Salt") %>'></asp:Checkbox>
+          </EditItemTemplate>
+                     </asp:TemplateField>  
+          <asp:TemplateField HeaderText="Pepper">
+         <ItemTemplate>
+                 <asp:Checkbox ID="Pepper" runat="server" checked='<%# Bind("Pepper") %>' Enabled ="false" />                              
+         </ItemTemplate>
+          <EditItemTemplate>
+                 <asp:Checkbox ID="Checkbox3" runat="server" checked='<%# Bind("Pepper") %>'></asp:Checkbox>
+          </EditItemTemplate>
+         </asp:TemplateField>  
+       
+         <asp:CommandField ButtonType="Button" ShowDeleteButton="True" ShowEditButton="True" />
+       
+            </Columns> 
+         
         </asp:GridView>
+      
         <br />
     </form>
 </body>
