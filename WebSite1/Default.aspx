@@ -49,6 +49,7 @@
             OnRowCancelingEdit ="OnRowCancelingEdit"
             OnRowDeleting ="OnRowDeleting"
             DataKeyNames="OrderID" 
+            onrowdatabound="GridView1_RowDataBound"
             >
              
          <Columns>
@@ -70,15 +71,15 @@
                  <asp:Label ID="Dish" runat="server" Text='<%# Bind("Dish") %>' />                              
          </ItemTemplate>
          <EditItemTemplate>
-                        <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Dish") %>'></asp:TextBox>
+                       <asp:DropDownList ID="DropDownList2" runat="server"></asp:DropDownList>
           </EditItemTemplate>
                      </asp:TemplateField>  
-         <asp:TemplateField HeaderText="Size">
+          <asp:TemplateField HeaderText="Portion Size">
          <ItemTemplate>
                  <asp:Label ID="Size" runat="server" Text='<%# Bind("Size") %>' />                              
          </ItemTemplate>
              <EditItemTemplate>
-             <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("Size") %>'></asp:TextBox>
+             <asp:DropDownList ID="DropDownList3" runat="server"></asp:DropDownList>
              </EditItemTemplate>
                      </asp:TemplateField>  
              <asp:TemplateField HeaderText="Chilli">

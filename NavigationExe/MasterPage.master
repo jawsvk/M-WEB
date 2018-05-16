@@ -1,0 +1,83 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type ="text/css">
+        .auto-style1{
+            width: 88px;
+        }
+        .auto-style2{
+            width: 88px;
+            height: 33px;
+        }
+        .autostype3{
+            width: 335px;
+            vertical-align: top;
+        }
+            .main_menu
+    {
+        width: 110px;
+        background-color: #ff6a00;
+        color: #000;
+        text-align: center;
+        height: 30px;
+        line-height: 30px;
+        margin-right: 5px;
+        margin-top: 5px;
+    }
+    .level_menu
+    {
+        width: 110px;
+        background-color: #ffd800;
+        color: #000;
+        text-align: center;
+        height: 30px;
+        line-height: 30px;
+        margin-top: 5px;
+    }
+    a:hover.main_menu { color: #0ff; font-weight: bolder; }
+    a:hover.level_menu { color: #0ff; font-weight: bolder; }
+    </style>
+</head>
+<body>
+ <form id="form1" runat="server">
+       <div>
+            <table style="width:100%">
+                <tr>
+                    <td class="auto-style1">
+                            <img src="aspnet.jpg" class="auto-style2" /></td>
+                       
+                    <td>Common header</td>
+
+                </tr>
+                <tr>
+                    <td class =" auto-style2">
+                           <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Verdana" Font-Size="0.8em" PathSeparator=" : ">
+                               <CurrentNodeStyle ForeColor="#333333" />
+                               <NodeStyle Font-Bold="True" ForeColor="#7C6F57" />
+                               <PathSeparatorStyle Font-Bold="True" ForeColor="#5D7B9D" />
+                               <RootNodeStyle Font-Bold="True" ForeColor="#5D7B9D" />
+                           </asp:SiteMapPath>
+                        <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1">
+                        </asp:TreeView>
+                        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+                    </td>
+                    <td class ="auto-style3">
+                       <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                       </asp:ContentPlaceHolder>
+                    </td>
+
+               </tr>
+
+            </table>
+
+       </div>
+
+ </form>
+</body>
+</html>
