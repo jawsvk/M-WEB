@@ -5,8 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Security.Principal;
-
-public partial class _Default : System.Web.UI.Page
+public partial class protected_lockedsite : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {

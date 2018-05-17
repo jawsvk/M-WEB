@@ -9,7 +9,10 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
         </div>
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/protected/lockedsite.aspx">Go To Locked Page</asp:HyperLink>
     </form>
+
 </body>
 </html>

@@ -9,7 +9,13 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <h1>Home</h1>
+       
         </div>
+        <p>
+            <asp:Login ID="Login1" runat="server">
+            </asp:Login>
+        </p>
     </form>
 </body>
 </html>
